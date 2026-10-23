@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shopping Cart chính thức ra mắt - Smart Shopping Cart</title>
+    <style>
+        :root {
+            --mau-neon-4: #ffcc00;
+            --mau-nen-trang: #f3f3f3;
+            --mau-chu-chinh: #333;
+            --chieu-rong-toi-da: 1200px;
+            --khoang-cach: 30px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url("img/background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: var(--mau-chu-chinh);
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #000;
+            height: 80px;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #000;
+            height: 80px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb-wrap {
+            max-width: var(--chieu-rong-toi-da);
+            margin: 0 auto;
+            padding: 20px 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .breadcrumb a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 6px;
+            opacity: 0.6;
+        }
+
+        .quay-lai {
+            font-size: 13px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .quay-lai:hover {
+            color: var(--mau-neon-4);
+        }
+
+        /* ===== LAYOUT 2 CỘT ===== */
+        .container {
+            max-width: var(--chieu-rong-toi-da);
+            margin: 0 auto;
+            padding: 20px 15px 40px;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: var(--khoang-cach);
+            align-items: start;
+        }
+
+        /* ===== BÀI VIẾT CHÍNH ===== */
+        .bai-viet {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 35px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .bai-viet-tieu-de {
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 1.35;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .bai-viet-meta {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .bai-viet-anh {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .bai-viet-chu-thich {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .bai-viet-noi-dung p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: #333;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .bai-viet-noi-dung h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+            margin: 28px 0 14px;
+        }
+
+        .bai-viet-noi-dung ul {
+            margin: 0 0 18px 22px;
+        }
+
+        .bai-viet-noi-dung ul li {
+            font-size: 15px;
+            line-height: 1.75;
+            margin-bottom: 8px;
+        }
+
+        .bai-viet-noi-dung strong {
+            color: #000;
+        }
+
+        /* Video nhúng */
+        .video-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin: 25px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .video-wrap iframe,
+        .video-wrap img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            object-fit: cover;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-tieu-de {
+            font-size: 15px;
+            font-weight: bold;
+            color: #222;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #000;
+            display: inline-block;
+        }
+
+        .sidebar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            transition: opacity 0.2s ease;
+        }
+
+        .sidebar-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .sidebar-item:hover {
+            opacity: 0.75;
+        }
+
+        .sidebar-item-img {
+            width: 90px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+            background-color: #ddd;
+        }
+
+        .sidebar-item-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-item-title {
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #222;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .sidebar-item-date {
+            font-size: 11px;
+            color: #999;
+            margin-top: auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            .bai-viet {
+                padding: 25px 20px;
+            }
+            .bai-viet-tieu-de {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+            <a href="tintuc.html">Trang chủ</a>
+            <span>›</span>
+            <a href="tintuc.html">Tin tức</a>
+            <span>›</span>
+            Smart Shopping Cart chính thức ra mắt
+        </div>
+        <a href="tintuc.html" class="quay-lai">← Về Tin Tức</a>
+    </div>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <div class="container">
+
+        <!-- BÀI VIẾT BÊN TRÁI -->
+        <article class="bai-viet">
+            <h1 class="bai-viet-tieu-de">SMART SHOPPING CART CHÍNH THỨC RA MẮT: MUA SẮM ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN</h1>
+
+            <div class="bai-viet-meta">
+                Thời Gian Đăng: 02/10/2026
+            </div>
+
+            <img src="../assets/images/Smart_Shopping_Cart.png" alt="Smart Shopping Cart ra mắt" class="bai-viet-anh">
+
+            <p class="bai-viet-chu-thich">
+                Nền tảng thương mại điện tử thế hệ mới giúp bạn mua sắm mọi lúc mọi nơi, thanh toán an toàn và giao hàng tận nơi chỉ trong vài cú click.
+            </p>
+
+            <div class="bai-viet-noi-dung">
+                <p>
+                    Sau nhiều tháng nghiên cứu và phát triển, <strong>Smart Shopping Cart</strong> chính thức được ra mắt — đánh dấu bước ngoặt trong lĩnh vực thương mại điện tử tại Việt Nam. Đây là nền tảng mua sắm trực tuyến được thiết kế dành riêng cho người dùng Việt, với mục tiêu mang lại trải nghiệm mua sắm đơn giản, nhanh chóng và an toàn tuyệt đối.
+                </p>
+
+                <h3>1. Mua sắm đơn giản — chỉ với vài cú click</h3>
+                <p>
+                    Smart Shopping Cart được xây dựng với giao diện thân thiện, dễ sử dụng cho mọi lứa tuổi. Chỉ cần tìm kiếm sản phẩm, thêm vào giỏ hàng và tiến hành thanh toán — toàn bộ quá trình chỉ mất chưa đầy 2 phút. Hệ thống gợi ý thông minh sẽ giúp bạn tìm được sản phẩm phù hợp nhất dựa trên sở thích và lịch sử mua sắm.
+                </p>
+
+                <h3>2. Thanh toán an toàn — bảo mật tuyệt đối</h3>
+                <p>
+                    Mọi giao dịch trên Smart Shopping Cart đều được mã hóa theo chuẩn <strong>SSL 256-bit</strong> — tiêu chuẩn bảo mật cao nhất hiện nay. Nền tảng hỗ trợ đa dạng phương thức thanh toán:
+                </p>
+                <ul>
+                    <li>Thanh toán khi nhận hàng (COD)</li>
+                    <li>Chuyển khoản ngân hàng</li>
+                    <li>Ví điện tử (Momo, ZaloPay, VNPay)</li>
+                    <li>Thẻ tín dụng / ghi nợ quốc tế</li>
+                </ul>
+
+                <h3>3. Giao hàng tận nơi — nhanh chóng và tiện lợi</h3>
+                <p>
+                    Với hệ thống kho vận trải rộng khắp cả nước, Smart Shopping Cart cam kết giao hàng trong vòng <strong>24 giờ</strong> đối với khu vực nội thành và <strong>2-3 ngày</strong> đối với các tỉnh thành khác. Đặc biệt, đơn hàng từ 200.000đ sẽ được <strong>miễn phí vận chuyển toàn quốc</strong>.
+                </p>
+
+                <div class="video-wrap">
+                    <img src="../assets/images/Smart_Shopping_Cart.png" alt="Video giới thiệu Smart Shopping Cart">
+                </div>
+                <p class="bai-viet-chu-thich">
+                    Video giới thiệu nền tảng Smart Shopping Cart — trải nghiệm mua sắm thế hệ mới.
+                </p>
+
+                <h3>4. Ưu đãi hấp dẫn cho người dùng đầu tiên</h3>
+                <p>
+                    Nhân dịp ra mắt, Smart Shopping Cart dành tặng chương trình khuyến mãi đặc biệt: <strong>giảm ngay 50%</strong> (tối đa 200.000đ) cho đơn hàng đầu tiên từ 300.000đ khi nhập mã <strong>WELCOME50</strong>. Chương trình áp dụng đến hết ngày 31/10/2026.
+                </p>
+
+                <h3>5. Cam kết từ Smart Shopping Cart</h3>
+                <p>
+                    Chúng tôi hiểu rằng niềm tin của khách hàng là tài sản quý giá nhất. Vì vậy, Smart Shopping Cart cam kết:
+                </p>
+                <ul>
+                    <li>100% sản phẩm chính hãng, có nguồn gốc xuất xứ rõ ràng</li>
+                    <li>Đổi trả miễn phí trong vòng 30 ngày nếu sản phẩm lỗi</li>
+                    <li>Hoàn tiền 100% nếu không hài lòng</li>
+                    <li>Hỗ trợ khách hàng 24/7 qua hotline và chat trực tuyến</li>
+                </ul>
+
+                <p>
+                    Hãy truy cập <strong>Smart Shopping Cart</strong> ngay hôm nay để trải nghiệm mua sắm trực tuyến thế hệ mới — nơi mọi giao dịch đều đơn giản, nhanh chóng và an toàn!
+                </p>
+            </div>
+        </article>
+
+        <!-- SIDEBAR BÊN PHẢI -->
+        <aside class="sidebar">
+            <div class="sidebar-tieu-de">Mới</div>
+            <div class="sidebar-list">
+
+                <a href="baiviet8.html" class="sidebar-item">
+                    <img src="../assets/images/nvidia-rtx-spark_mid.png" alt="NVIDIA RTX Spark" class="sidebar-item-img">
+                    <div class="sidebar-item-content">
+                        <div class="sidebar-item-title">NVIDIA RTX SPARK CHÍNH THỨC RA MẮT: LAPTOP AI VỚI 128GB RAM, 1 PFLOP AI</div>
+                        <div class="sidebar-item-date">07/10/2026</div>
+                    </div>
+                </a>
+
+                <a href="baiviet10.html" class="sidebar-item">
+                    <img src="../assets/images/POCoC95PRO.png" alt="POCO C95 Pro" class="sidebar-item-img">
+                    <div class="sidebar-item-content">
+                        <div class="sidebar-item-title">POCO C95 PRO RA MẮT TẠI VIỆT NAM: PIN 7.500MAH, SẠC NHANH 45W</div>
+                        <div class="sidebar-item-date">02/10/2026</div>
+                    </div>
+                </a>
+
+                <a href="baiviet15.html" class="sidebar-item">
+                    <img src="../assets/images/TDKSmartGlasses.png" alt="TDK Smart Glasses" class="sidebar-item-img">
+                    <div class="sidebar-item-content">
+                        <div class="sidebar-item-title">TDK TRÌNH DIỄN KÍNH THÔNG MINH ĐẦU TIÊN THẾ GIỚI VỚI CÔNG NGHỆ CHIẾU VÕNG MẠC</div>
+                        <div class="sidebar-item-date">02/10/2026</div>
+                    </div>
+                </a>
+
+                <a href="baiviet11.html" class="sidebar-item">
+                    <img src="../assets/images/HUAWEIMATE90.png" alt="Huawei Mate90" class="sidebar-item-img">
+                    <div class="sidebar-item-content">
+                        <div class="sidebar-item-title">HUAWEI MATE90 RA MẮT: CAMERA MODULE CẢM BIẾN ĐẦU TIÊN, ZOOM QUANG 10X</div>
+                        <div class="sidebar-item-date">01/10/2026</div>
+                    </div>
+                </a>
+
+                <a href="baiviet2.html" class="sidebar-item">
+                    <img src="../assets/images/sale50.png" alt="Khuyến mãi khai trương" class="sidebar-item-img">
+                    <div class="sidebar-item-content">
+                        <div class="sidebar-item-title">KHUYẾN MÃI KHAI TRƯƠNG: GIẢM 50% CHO ĐƠN HÀNG ĐẦU TIÊN</div>
+                        <div class="sidebar-item-date">01/10/2026</div>
+                    </div>
+                </a>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <footer></footer>
+</body>
+</html>

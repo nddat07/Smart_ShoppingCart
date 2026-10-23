@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate</title>
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/header-footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__left">
+    <a class="logo" href="../pages/index.html">KIRIGAYA STORE</a>
+
+    <nav class="nav">
+      <a href="../pages/index.html">Trang Chủ</a>
+      <a href="../pages/news.html">Tin Tức</a>
+      <a href="../pages/products.html">Sản Phẩm</a>
+      <div class="dropdown">
+        <a href="#">Khác<span class="caret"></span></a>
+        <ul class="submenu">
+          <li><a href="../pages/donate.html">Trung Tâm Liên Hệ</a></li>
+          <li><a href="../pages/login.html">Đăng Nhập</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="header__center">
+    <form class="search" role="search" onsubmit="return false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10" cy="10" r="6.5"></circle>
+        <line x1="15" y1="15" x2="21" y2="21"></line>
+      </svg>
+      <input type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
+    </form>
+  </div>
+
+  <div class="header__right">
+    <a class="login" href="../pages/login.html">Đăng Nhập <span class="avatar"></span></a>
+  </div>
+  </header>
+ 
+<div class="main">
+  <div class="wrap wide">
+    <h1 class="donate-title">Ủng hộ chúng tôi</h1>
+    <p class="donate-sub">Chọn một trong các hình thức ủng hộ bên dưới</p>
+    <div class="grid">
+      <div class="card">
+        <img class="avatar" src="../assets/images/dat.jpg" alt="Avatar">
+        <span class="name">Nguyễn Đức Đạt</span>
+        <img class="qr" src="../assets/images/qr.jpg" alt="QR">
+        <span class="scan">Quét mã để ủng hộ</span>
+      </div>
+      <div class="card">
+        <img class="avatar" src="../assets/images/huy.jpg" alt="Avatar">
+        <span class="name">Nguyễn Lê Nhật Huy</span>
+        <img class="qr" src="../assets/images/qr.jpg" alt="QR">
+        <span class="scan">Quét mã để ủng hộ</span>
+      </div>
+      <div class="card">
+        <img class="avatar" src="../assets/images/long.jpg" alt="Avatar">
+        <span class="name">Nguyễn Tiểu Long</span>
+        <img class="qr" src="../assets/images/qr.jpg" alt="QR">
+        <span class="scan">Quét mã để ủng hộ</span>
+      </div>
+      <div class="card">
+        <img class="avatar" src="../assets/images/ngo.jpg" alt="Avatar">
+        <span class="name">Ngô Gia Đạt</span>
+        <img class="qr" src="../assets/images/qr.jpg" alt="QR">
+        <span class="scan">Quét mã để ủng hộ</span>
+      </div>
+      <div class="card">
+        <img class="avatar" src="../assets/images/tan.jpg" alt="Avatar">
+        <span class="name">Nguyễn Vũ Minh Tân</span>
+        <img class="qr" src="../assets/images/qr.jpg" alt="QR">
+        <span class="scan">Quét mã để ủng hộ</span>
+      </div>
+    </div>
+    <p class="thanks">Cảm ơn bạn rất nhiều vì đã ủng hộ!</p>
+    <a href="login.html" class="back"><i class="fas fa-arrow-left"></i> Quay lại</a>
+  </div>
+</div>
+ 
+<section class="social">
+  <ul class="social__list">
+    <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></li>
+    <li><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
+    <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.3 5 12 5 12 5s-6.3 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.76 1.77C5.7 19 12 19 12 19s6.3 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15V9l5.2 3z"/></svg></a></li>
+    <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.9s-1.4-.3-2.8-.3c-2.8 0-4.4 1.7-4.4 4.6v2.3H6.5v3.3h2.7V22z"/></svg></a></li>
+    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" class="stroke"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></svg></a></li>
+    <li><a href="#" aria-label="HoYoLAB"><svg viewBox="0 0 24 24" class="stroke"><circle cx="12" cy="12" r="9.5"/><path d="M7 14c1-3 3-4.500 5-4.500s4 1.500 5 4.500M9 17c1 .8 2 1.100 3 1.100s2-.3 3-1.100"/><circle cx="9.500" cy="12" r=".8" fill="currentColor"/><circle cx="14.500" cy="12" r=".8" fill="currentColor"/></svg></a></li>
+    <li><a href="#" aria-label="Discord"><svg viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></a></li>
+    <li><a href="#" aria-label="Reddit"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="8" ry="5.8"/><circle cx="4.300" cy="11.300" r="2"/><circle cx="19.700" cy="11.300" r="2"/><circle cx="18" cy="4.500" r="1.600"/><path d="M12 8.300l1.200-4.600 4.800 1" fill="none" stroke="currentColor" stroke-width="1.400"/><circle cx="9" cy="13" r="1.300" fill="#171717"/><circle cx="15" cy="13" r="1.300" fill="#171717"/><path d="M9.200 16.300c1.600 1 4 1 5.600 0" fill="none" stroke="#171717" stroke-width="1.200" stroke-linecap="round"/></svg></a></li>
+    <li><a href="#" aria-label="Twitch"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4 3L3 6v13h4.500v3H10l3-3h4l4-4V3H4zm15 11l-2.500 2.500h-4L10 19v-2.500H6.500V5H19v9zM15.500 7.500H17V12h-1.500zm-4 0H13V12h-1.500z"/></svg></a></li>
+    <li><a href="#" aria-label="Messenger"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.400 2 2 6.200 2 11.400c0 2.900 1.400 5.500 3.600 7.200V22l3.300-1.800c.9.300 1.900.4 3.100.4 5.600 0 10-4.200 10-9.400S17.600 2 12 2zm1 12.600l-2.500-2.700-4.900 2.700 5.400-5.700 2.600 2.700 4.800-2.700L13 14.600z"/></svg></a></li>
+    <li><a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path class="stroke" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round" d="M12 2.500a9.500 9.500 0 0 0-8.100 14.400L2.500 21.500l4.800-1.300A9.500 9.500 0 1 0 12 2.500z"/><path d="M9 7.500c-.3 0-.8.1-1.100.6-.5.8-.6 2 .6 3.600 1.500 2 3 3 4.600 3.300 1 .2 2-.4 2.200-1.200l-.1-.6-1.800-.9-.8.900c-1-.4-2-1.400-2.500-2.400l.7-.8-.9-1.900z"/></svg></a></li>
+  </ul>
+</section>
+
+<!-- 2. Đăng ký nhận tin -->
+<section class="subscribe">
+  <div class="subscribe__inner">
+    <div class="subscribe__info">
+      <h2>Theo Dõi Thông Tin Mới Nhất</h2>
+      <p>Theo dõi thông tin chính thức của Genshin Impact, cập nhật những tin tức mới nhất, thông tin nhân vật và phúc lợi sự kiện hạn giờ từ Paimon.</p>
+    </div>
+
+    <form class="subscribe__form" onsubmit="return false">
+      <div class="subscribe__row">
+        <input type="email" placeholder="Email" aria-label="Email">
+        <button type="submit">Theo Dõi Ngay</button>
+      </div>
+      <label class="consent">
+        <input type="checkbox">
+        <span>Đã đồng ý thu thập và sử dụng dữ liệu cá nhân để nhận lời mời sự kiện và thông tin trò chơi khác. <a href="#">Xem Chi Tiết &gt;&gt;</a></span>
+      </label>
+    </form>
+  </div>
+</section>
+
+<!-- 3. Chân trang -->
+<footer class="footer">
+  <a class="footer__logo" href="#">
+    <b>KIRIGAYA</b>
+    <small>STORE</small>
+  </a>
+
+  <div class="footer__links">
+    <a href="#">Điều Khoản</a>
+    <a href="#">Bảo Mật</a>
+  </div>
+
+  <div class="footer__info">
+    <p>Hotline: 0123 456 789</p>
+    <p>Email: nguyenducdat071013@gmail.com</p>
+    <p>QĐ số 401/QĐ-PTTH&amp;TTĐT cấp bởi Cục Phát thanh, truyền hình và thông tin điện tử ngày 07/07/2026</p>
+    <p>Tầng 4, Tòa nhà N01-T4 Khu Đoàn Ngoại Giao, đường Hoàng Minh Thảo, Phường Xuân Đỉnh, Thành phố Tam Hiệp</p>
+  </div>
+
+  <button class="lang" type="button" aria-label="Ngôn ngữ">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 17.9A8 8 0 0 1 4.100 11L9 15.900V17c0 1 .9 2 2 2v.9zm6.900-2.500A2 2 0 0 0 16 16h-1v-3c0-.6-.4-1-1-1H8v-2h2c.6 0 1-.4 1-1V7h2c1.100 0 2-.9 2-2v-.4a8 8 0 0 1 2.900 12.800z"/></svg>
+  </button>
+</footer>
+ 
+<script src="../js/donate.js"></script>
+</body>
+</html>

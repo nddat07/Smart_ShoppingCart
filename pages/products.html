@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cửa Hàng Trực Tuyến</title>
+  <link rel="stylesheet" href="../css/products.css">
+  <link rel="stylesheet" href="../css/header-footer.css">
+  <!-- FontAwesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 1. Thanh Menu Điều Hướng (Navbar)[cite: 1] -->
+  <header class="header">
+  <div class="header__left">
+    <a class="logo" href="../pages/index.html">KIRIGAYA STORE</a>
+
+    <nav class="nav">
+      <a href="../pages/index.html">Trang Chủ</a>
+      <a href="../pages/news.html">Tin Tức</a>
+      <a class="active" href="#">Sản Phẩm</a>
+      <div class="dropdown">
+        <a href="#">Khác<span class="caret"></span></a>
+        <ul class="submenu">
+          <li><a href="../pages/donate.html">Trung Tâm Liên Hệ</a></li>
+          <li><a href="../pages/login.html">Đăng Nhập</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="header__center">
+    <form class="search" role="search" onsubmit="return false">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10" cy="10" r="6.5"></circle>
+        <line x1="15" y1="15" x2="21" y2="21"></line>
+      </svg>
+      <input type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
+    </form>
+  </div>
+
+  <div class="header__right">
+    <a class="login" href="../pages/login.html">Đăng Nhập <span class="avatar"></span></a>
+  </div>
+  </header>
+
+  <!-- Bố cục chính: Item-bar bên trái & Danh sách sản phẩm bên phải[cite: 1] -->
+  <div class="main-container">
+    
+    <!-- 2. Thanh Item-bar bên trái (Sidebar Danh mục với 13 ID mới)[cite: 1] -->
+    <aside class="sidebar">
+      <h3 class="sidebar-title"><i class="fa-solid fa-list"></i> Danh Mục</h3>
+      <ul class="category-list">
+        <li><a href="#"><i class="thoi-trang-nam"></i> Thời trang nam</a></li>
+        <li><a href="#"><i class="thoi-trang-nu"></i> Thời trang nữ</a></li>
+        <li><a href="#"><i class="dien-thoai-phu-kien"></i> Điện thoại & phụ kiện</a></li>
+        <li><a href="#"><i class="laptop-maytinh"></i> Laptop, máy tính</a></li>
+        <li><a href="#"><i class="dong-ho"></i> Đồng hồ</a></li>
+        <li><a href="#"><i class="giay-dep-nam"></i> Giày dép nam</a></li>
+        <li><a href="#"><i class="giay-dep-nu"></i> Giày dép nữ</a></li>
+        <li><a href="#"><i class="gia-dung"></i> Thiết bị gia dụng</a></li>
+        <li><a href="#"><i class="xe"></i> Ô tô, xe máy, xe đạp</a></li>
+        <li><a href="#"><i class="toy"></i> Toy</a></li>
+        <li><a href="#"><i class="sach"></i> Sách</a></li>
+        <li><a href="#"><i class="phu-kien-trang-suc"></i> Phụ kiện & trang sức</a></li>
+        <li><a href="#"><i class="cosplay"></i> Cosplay</a></li>
+      </ul>
+    </aside>
+
+    <!-- 3. Div Chứa Các Sản Phẩm đã gán ngẫu nhiên 12 ID[cite: 1] -->
+    <main class="content-area">
+      <div class="content-box">
+        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+        <button id="btn-show-all" class="btn-show-all">Tất cả</button>
+      </div>
+      <div class="products-grid">
+        <!-- Sản phẩm 1: Thời trang nam -->
+        <div class="product-card" id="thoi-trang-nam">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/103/300/200" alt="Sản phẩm 1">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Áo khoác nam cao cấp</h4>
+            <p class="product-desc">Thời trang nam</p>
+            <p class="product-price">250.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 2: Thời trang nữ -->
+        <div class="product-card" id="thoi-trang-nu">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/1060/300/200" alt="Sản phẩm 2">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Đầm dự tiệc sang trọng</h4>
+            <p class="product-desc">Thời trang nữ</p>
+            <p class="product-price">450.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 3: Điện thoại & phụ kiện -->
+        <div class="product-card" id="dienthoai-phukien">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/201/300/200" alt="Sản phẩm 3">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Tai nghe Bluetooth TWS</h4>
+            <p class="product-desc">Điện thoại & phụ kiện</p>
+            <p class="product-price">180.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 4: Laptop, máy tính -->
+        <div class="product-card" id="laptop-pc">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/250/300/200" alt="Sản phẩm 4">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Đế tản nhiệt Laptop LED</h4>
+            <p class="product-desc">Laptop, máy tính</p>
+            <p class="product-price">320.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 5: Đồng hồ -->
+        <div class="product-card" id="dong-ho">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/160/300/200" alt="Sản phẩm 5">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Đồng hồ cơ nam dây da</h4>
+            <p class="product-desc">Đồng hồ</p>
+            <p class="product-price">1.200.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 6: Giày dép nam -->
+        <div class="product-card" id="giay-nam">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/180/300/200" alt="Sản phẩm 6">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Giày Sneaker thể thao nam</h4>
+            <p class="product-desc">Giày dép nam</p>
+            <p class="product-price">850.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 7: Giày dép nữ -->
+        <div class="product-card" id="giay-nu">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/119/300/200" alt="Sản phẩm 7">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Giày cao gót mũi nhọn</h4>
+            <p class="product-desc">Giày dép nữ</p>
+            <p class="product-price">15.000.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 8: Thiết bị gia dụng -->
+        <div class="product-card" id="gia-dung">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/96/300/200" alt="Sản phẩm 8">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Máy xay sinh tố mini</h4>
+            <p class="product-desc">Thiết bị gia dụng</p>
+            <p class="product-price">2.500.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 9: Ô tô, xe máy, xe đạp -->
+        <div class="product-card" id="xe">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/367/300/200" alt="Sản phẩm 9">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Mũ bảo hiểm nửa đầu</h4>
+            <p class="product-desc">Ô tô, xe máy, xe đạp</p>
+            <p class="product-price">690.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 10: Toy -->
+        <div class="product-card" id="toy">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/21/300/200" alt="Sản phẩm 10">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Mô hình Robot lắp ráp</h4>
+            <p class="product-desc">Toy</p>
+            <p class="product-price">410.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 11: Sách -->
+        <div class="product-card" id="sach">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/26/300/200" alt="Sản phẩm 11">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Sách Lập trình Web căn bản</h4>
+            <p class="product-desc">Sách</p>
+            <p class="product-price">990.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 12: Phụ kiện & trang sức -->
+        <div class="product-card" id="phukien-trangsuc">
+          <div class="product-thumb">
+            <img src="https://picsum.photos/id/30/300/200" alt="Sản phẩm 12">
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">Vòng tay bạc cao cấp</h4>
+            <p class="product-desc">Phụ kiện & trang sức</p>
+            <p class="product-price">550.000đ</p>
+            <button class="btn-add">Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  <script src="../js/products.js"></script>
+  </div>
+
+</body>
+</html>

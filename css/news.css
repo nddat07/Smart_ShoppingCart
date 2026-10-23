@@ -1,0 +1,334 @@
+        :root {
+            /* --- Màu neon còn dùng --- */
+            --mau-neon-4: #ffcc00;   /* Vàng */
+
+            /* --- Card phần 1 --- */
+            --card-nen: rgba(20, 20, 30, 0.75);
+            --card-mau-chu: #fff;
+            --card-mau-mo-ta: #d0d0d0;
+            --card-mau-ngay: var(--mau-neon-4);
+            --card-bo-goc: 8px;
+
+            /* --- Nền & chữ chung --- */
+            --mau-nen-trang: #f3f3f3;
+            --mau-chu-chinh: #333;
+
+            /* --- Phần 1: ảnh nền --- */
+            --anh-nen-phan-1: url("img/background.jpg");
+            --lop-phu-phan-1: rgba(0, 0, 0, 0.15);
+            --do-mo-phan-1: 2px;
+            --padding-phan-1: 50px 15px;
+            --khoang-cach-phan-1: 20px;
+            --chieu-rong-toi-da: 1100px;
+
+            /* --- Phần 2: danh sách --- */
+            --item-nen: #fff;
+            --item-bo-goc: 8px;
+            --item-padding: 20px;
+            --item-khoang-cach: 16px;
+            --item-bong: 0 1px 4px rgba(0,0,0,0.08);
+
+            /* --- Filter bar --- */
+            --filter-nen-active: #333;
+            --filter-chu-active: #fff;
+            --filter-nen: #f0f0f0;
+
+            /* --- Nút Xem thêm / Thu gọn --- */
+            --nut-xemthem-nen: #333;
+            --nut-xemthem-chu: #fff;
+            --nut-thugon-nen: var(--mau-neon-4);
+            --nut-thugon-chu: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--mau-nen-trang);
+            color: var(--mau-chu-chinh);
+        }
+
+        header {
+            background-color: #000;
+            height: 80px;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #000;
+            height: 80px;
+            width: 100%;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        /* ===== PHẦN 1: ẢNH NỀN FULL WIDTH ===== */
+        .top-section {
+            position: relative;
+            width: 100%;
+            background-image: var(--anh-nen-phan-1);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: var(--padding-phan-1);
+            overflow: hidden;
+        }
+
+        /* Lớp phủ tĩnh - không thay đổi khi hover */
+        .top-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--lop-phu-phan-1);
+            backdrop-filter: blur(var(--do-mo-phan-1));
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .top-section-inner {
+            position: relative;
+            z-index: 1;
+            max-width: var(--chieu-rong-toi-da);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--khoang-cach-phan-1);
+        }
+
+        .card {
+            background-color: var(--card-nen);
+            border-radius: var(--card-bo-goc);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: var(--card-mau-chu);
+            display: block;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* Gạch chân màu trắng đơn giản khi hover */
+        .card::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: 0;
+            background: #fff;
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .card:hover::after {
+            width: 100%;
+        }
+
+        .card-img-wrap {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background-color: #ddd;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: var(--card-mau-chu);
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--card-mau-mo-ta);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .card-date {
+            font-size: 12px;
+            color: var(--card-mau-ngay);
+            text-align: right;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* ===== PHẦN 2: DANH SÁCH ===== */
+        .bottom-section-wrap {
+            max-width: var(--chieu-rong-toi-da);
+            margin: 0 auto;
+            padding: 30px 15px;
+        }
+
+        .bottom-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: none;
+            background-color: var(--filter-nen);
+            color: var(--mau-chu-chinh);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .filter-btn.active {
+            background-color: var(--filter-nen-active);
+            color: var(--filter-chu-active);
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--item-khoang-cach);
+        }
+
+        .list-item {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            padding: var(--item-padding);
+            background-color: var(--item-nen);
+            border-radius: var(--item-bo-goc);
+            box-shadow: var(--item-bong);
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .list-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .list-item-img {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+            background-color: #ddd;
+            position: relative;
+            z-index: 1;
+        }
+
+        .list-item-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .list-item-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .list-item-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .list-item-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .list-item-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .list-item-tag {
+            font-size: 12px;
+            color: #007bff;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-view-more {
+            background-color: var(--nut-xemthem-nen);
+            color: var(--nut-xemthem-chu);
+        }
+
+        .btn-collapse {
+            background-color: var(--nut-thugon-nen);
+            color: var(--nut-thugon-chu);
+        }
+
+        .hide-forever {
+            display: none !important;
+        }
+
+        /* Responsive nhỏ */
+        @media (max-width: 768px) {
+            .top-section-inner {
+                grid-template-columns: 1fr;
+            }
+            .list-item {
+                flex-direction: column;
+            }
+            .list-item-img {
+                width: 100%;
+                height: 180px;
+            }
+        }
