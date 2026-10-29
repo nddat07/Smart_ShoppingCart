@@ -27,272 +27,83 @@
   </div>
 
 
-  <div class="header__center">
-    <form class="search" role="search" onsubmit="return false">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="10" cy="10" r="6.5"></circle>
-        <line x1="15" y1="15" x2="21" y2="21"></line>
-      </svg>
-      <input type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
-    </form>
-  </div>
+<div class="header__center">
+  <form class="search" role="search" onsubmit="return false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="10" cy="10" r="6.5"></circle>
+      <line x1="15" y1="15" x2="21" y2="21"></line>
+    </svg>
+    <input id="search-input" autocomplete="off" type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
+  </form>
 
+  <div class="search-suggest" id="search-suggest" hidden></div>
+</div>
+  
   <div class="header__right">
+    <a class="cart" href="../pages/cart.html" aria-label="Giỏ hàng">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.3a1 1 0 0 0 1-.8L21 7H5.6"></path>
+      </svg>
+      <span class="cart-badge" hidden>0</span>
+    </a>
     <a class="login" href="../pages/login.html">Đăng Nhập <span class="avatar"></span></a>
   </div>
   </header>
 
     <!-- PHẦN 1: 3 TIN MỚI NHẤT -->
-    <section class="top-section">
-        <div class="top-section-inner">
-            <a href="baiviet1.html" class="card">
-                <div class="card-img-wrap">
-                    <img src="../assets/images/Smart_Shopping_Cart.png" alt="Smart Shopping Cart ra mắt" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">SMART SHOPPING CART CHÍNH THỨC RA MẮT: MUA SẮM ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN</h3>
-                    <p class="card-desc">Nền tảng thương mại điện tử thế hệ mới giúp bạn mua sắm mọi lúc mọi nơi, thanh toán an toàn và giao hàng tận nơi chỉ trong vài cú click.</p>
-                    <span class="card-date">02/10/2026</span>
-                </div>
-            </a>
-
-            <a href="baiviet2.html" class="card">
-                <div class="card-img-wrap">
-                    <img src="../assets/images/sale50.png" alt="Khuyến mãi khai trương" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">KHUYẾN MÃI KHAI TRƯƠNG: GIẢM 50% CHO ĐƠN HÀNG ĐẦU TIÊN</h3>
-                    <p class="card-desc">Chào mừng bạn đến với Smart Shopping Cart! Nhập mã <strong>WELCOME50</strong> để được giảm ngay 50% (tối đa 200.000đ) cho đơn hàng đầu tiên từ 300.000đ.</p>
-                    <span class="card-date">01/10/2026</span>
-                </div>
-            </a>
-
-            <a href="baiviet3.html" class="card">
-                <div class="card-img-wrap">
-                    <img src="../assets/images/ip18.png" alt="iPhone 18 Pro" class="card-img">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">IPHONE 18 PRO RA MẮT TOÀN CẦU: CHIP A20 PRO 2NM, CAMERA KHẨU ĐỘ BIẾN THIÊN</h3>
-                    <p class="card-desc">Apple vừa trình làng iPhone 18 Pro và Pro Max với chip A20 Pro 2nm, camera chính 48MP khẩu độ biến thiên, pin lên đến 45 giờ phát video.</p>
-                    <span class="card-date">10/09/2026</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- PHẦN 2: DANH SÁCH TIN TỨC -->
-    <div class="bottom-section-wrap">
-        <section class="bottom-section">
-            <div class="filter-bar">
-                <button class="filter-btn active" onclick="filterNews('all', this)">Tất cả</button>
-                <button class="filter-btn" onclick="filterNews('thongtin', this)">Thông tin</button>
-                <button class="filter-btn" onclick="filterNews('khuyenmai', this)">Khuyến mãi</button>
-                <button class="filter-btn" onclick="filterNews('sanpham', this)">Sản phẩm mới</button>
-            </div>
-
-            <div class="news-list" id="newsList">
-                <!-- Bài 1 -->
-                <a href="baiviet1.html" class="list-item" data-cat="thongtin" data-top="true">
-                    <img src="../assets/images/Smart_Shopping_Cart.png" alt="Smart Shopping Cart ra mắt" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">SMART SHOPPING CART CHÍNH THỨC RA MẮT: MUA SẮM ONLINE ĐƠN GIẢN, NHANH CHÓNG VÀ AN TOÀN</h3>
-                        <p class="list-item-desc">Nền tảng thương mại điện tử thế hệ mới giúp bạn mua sắm mọi lúc mọi nơi, thanh toán an toàn và giao hàng tận nơi chỉ trong vài cú click.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">02/10/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 2 -->
-                <a href="baiviet2.html" class="list-item" data-cat="khuyenmai" data-top="true">
-                    <img src="../assets/images/sale50.png" alt="Khuyến mãi khai trương" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">KHUYẾN MÃI KHAI TRƯƠNG: GIẢM 50% CHO ĐƠN HÀNG ĐẦU TIÊN</h3>
-                        <p class="list-item-desc">Nhập mã WELCOME50 để được giảm ngay 50% (tối đa 200.000đ) cho đơn hàng đầu tiên từ 300.000đ. Số lượng có hạn!</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">01/10/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 3 -->
-                <a href="baiviet3.html" class="list-item" data-cat="sanpham" data-top="true">
-                    <img src="../assets/images/ip18.png" alt="iPhone 18 Pro" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">IPHONE 18 PRO RA MẮT TOÀN CẦU: CHIP A20 PRO 2NM, CAMERA KHẨU ĐỘ BIẾN THIÊN</h3>
-                        <p class="list-item-desc">Apple vừa trình làng iPhone 18 Pro và Pro Max với chip A20 Pro 2nm, camera chính 48MP khẩu độ biến thiên, pin lên đến 45 giờ phát video. Giá từ 1.199 USD.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">10/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 4 -->
-                <a href="baiviet4.html" class="list-item" data-cat="thongtin">
-                    <img src="../assets/images/thanhtoanantoan.png" alt="Thanh toán an toàn" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">HƯỚNG DẪN THANH TOÁN AN TOÀN TRÊN SMART SHOPPING CART</h3>
-                        <p class="list-item-desc">Tìm hiểu các phương thức thanh toán được hỗ trợ: COD, chuyển khoản, ví điện tử và thẻ tín dụng — tất cả đều được mã hóa bảo mật.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">27/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 5 -->
-                <a href="baiviet5.html" class="list-item" data-cat="khuyenmai">
-                    <img src="../assets/images/sale70cuoituan.png" alt="Flash sale cuối tuần" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">FLASH SALE CUỐI TUẦN: GIẢM ĐẾN 70% CHO HÀNG NGÀN SẢN PHẨM</h3>
-                        <p class="list-item-desc">Chỉ diễn ra trong 48 giờ: thời trang, gia dụng, công nghệ giảm giá sốc. Nhanh tay kẻo lỡ!</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">26/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 6 -->
-                <a href="baiviet6.html" class="list-item" data-cat="sanpham">
-                    <img src="../assets/images/s26.png" alt="Samsung Galaxy S26" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">SAMSUNG GALAXY S26 RA MẮT: CHIP EXYNOS 2600 2NM, TÍNH NĂNG AI ĐỘT PHÁ</h3>
-                        <p class="list-item-desc">Samsung chính thức ra mắt Galaxy S26 với chip Exynos 2600 2nm, NPU tăng 113% hiệu năng AI, màn hình 6.3 inch 120Hz. Giá từ 25.99 triệu đồng.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">26/02/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 7 -->
-                <a href="baiviet7.html" class="list-item" data-cat="thongtin">
-                    <img src="../assets/images/doitra30ngay.png" alt="Chính sách đổi trả 30 ngày" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">CHÍNH SÁCH ĐỔI TRẢ MỚI: 30 NGÀY MIỄN PHÍ ĐỔI HÀNG</h3>
-                        <p class="list-item-desc">Smart Shopping Cart nâng cấp chính sách đổi trả lên 30 ngày, miễn phí đổi size, hoàn tiền 100% nếu sản phẩm lỗi từ nhà sản xuất.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">24/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 8 -->
-                <a href="baiviet8.html" class="list-item" data-cat="sanpham">
-                    <img src="../assets/images/nvidia-rtx-spark_mid.png" alt="NVIDIA RTX Spark" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">NVIDIA RTX SPARK CHÍNH THỨC RA MẮT: LAPTOP AI VỚI 128GB RAM, 1 PFLOP AI</h3>
-                        <p class="list-item-desc">Microsoft và NVIDIA hợp tác ra mắt nền tảng RTX Spark cho laptop sáng tạo, với 6 mẫu từ ASUS, Dell, HP, Lenovo, Microsoft và MSI. AI算力 đạt 1 PFLOP.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">07/10/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 9 -->
-                <a href="baiviet9.html" class="list-item" data-cat="khuyenmai">
-                    <img src="../assets/images/200kfreeship.png" alt="Freeship toàn quốc" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">MÃ GIẢM GIÁ THÁNG 9: FREESHIP TOÀN QUỐC CHO ĐƠN TỪ 200K</h3>
-                        <p class="list-item-desc">Nhập mã SHIPFREE để được miễn phí vận chuyển toàn quốc cho mọi đơn hàng từ 200.000đ. Áp dụng đến hết 30/09/2026.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">22/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 10 -->
-                <a href="baiviet10.html" class="list-item" data-cat="thongtin">
-                    <img src="../assets/images/POCoC95PRO.png" alt="POCO C95 Pro" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">POCO C95 PRO RA MẮT TẠI VIỆT NAM: PIN 7.500MAH, SẠC NHANH 45W</h3>
-                        <p class="list-item-desc">Smartphone POCO C95 Pro vừa được ra mắt tại Việt Nam với pin khủng 7.500mAh, màn hình 6.9 inch 120Hz, sạc nhanh 45W. Giá chỉ 6,49 triệu đồng.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">02/10/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 11 -->
-                <a href="baiviet11.html" class="list-item" data-cat="sanpham">
-                    <img src="../assets/images/HUAWEIMATE90.png" alt="Huawei Mate90" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">HUAWEI MATE90 RA MẮT: CAMERA MODULE CẢM BIẾN ĐẦU TIÊN, ZOOM QUANG 10X</h3>
-                        <p class="list-item-desc">Huawei vừa trình làng Mate90 với camera module cảm biến đầu tiên trên thế giới, hỗ trợ zoom quang học liên tục 10x — bước đột phá về nhiếp ảnh di động.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">01/10/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 12 -->
-                <a href="baiviet12.html" class="list-item" data-cat="khuyenmai">
-                    <img src="../assets/images/phukiendienthoai.png" alt="Combo phụ kiện điện thoại" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">COMBO TIẾT KIỆM: MUA 2 TẶNG 1 CHO PHỤ KIỆN ĐIỆN THOẠI</h3>
-                        <p class="list-item-desc">Áp dụng cho sạc dự phòng, cáp sạc, ốp lưng, kính cường lực. Mua 2 sản phẩm bất kỳ nhận ngay 1 sản phẩm miễn phí.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">19/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 13 -->
-                <a href="baiviet13.html" class="list-item" data-cat="thongtin">
-                    <img src="../assets/images/khohang.png" alt="Kho hàng mới" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">HỆ THỐNG KHO HÀNG MỚI TẠI TP.HCM: GIAO HÀNG TRONG 2 GIỜ</h3>
-                        <p class="list-item-desc">Smart Shopping Cart khai trương kho vận mới tại TP.HCM, rút ngắn thời gian giao hàng nội thành xuống chỉ còn 2 giờ.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">18/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 14 -->
-                <a href="baiviet14.html" class="list-item" data-cat="khuyenmai">
-                    <img src="../assets/images/ma100k.png" alt="Săn mã giảm giá 100k" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">SĂN MÃ GIẢM GIÁ MỖI NGÀY: LÊN ĐẾN 100.000Đ</h3>
-                        <p class="list-item-desc">Mỗi ngày, Smart Shopping Cart tung ra 100 mã giảm giá ngẫu nhiên từ 20.000đ đến 100.000đ. Theo dõi fanpage để không bỏ lỡ!</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">17/09/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Bài 15 -->
-                <a href="baiviet15.html" class="list-item" data-cat="sanpham">
-                    <img src="../assets/images/TDKSmartGlasses.png" alt="TDK Smart Glasses" class="list-item-img">
-                    <div class="list-item-content">
-                        <h3 class="list-item-title">TDK TRÌNH DIỄN KÍNH THÔNG MINH ĐẦU TIÊN THẾ GIỚI VỚI CÔNG NGHỆ CHIẾU VÕNG MẠC</h3>
-                        <p class="list-item-desc">TDK giới thiệu kính thông minh sử dụng gương siêu quang học 150nm, chiếu hình ảnh trực tiếp lên võng mạc, bảo vệ quyền riêng tư. Sẽ demo tại CEATEC 2026.</p>
-                        <div class="list-item-footer">
-                            <span class="list-item-date">02/10/2026</span>
-                            <span class="list-item-tag">Xem thêm</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="action-buttons" id="actionButtons">
-                <button class="btn btn-view-more" id="btnViewMore">Xem Thêm</button>
-                <button class="btn btn-collapse" id="btnCollapse" style="display: none;">Thu Gọn</button>
-            </div>
-        </section>
+<!-- 3 TIN NỔI BẬT -->
+<section class="top-section">
+    <div class="top-section-inner" id="topNews">
+        <!-- JavaScript tự hiển thị -->
     </div>
+</section>
+
+<!-- DANH SÁCH TIN TỨC -->
+<div class="bottom-section-wrap">
+    <section class="bottom-section">
+
+        <div class="filter-bar">
+            <button class="filter-btn active"
+                    onclick="filterNews('all', this)">
+                Tất cả
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterNews('thongtin', this)">
+                Thông tin
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterNews('khuyenmai', this)">
+                Khuyến mãi
+            </button>
+
+            <button class="filter-btn"
+                    onclick="filterNews('sanpham', this)">
+                Sản phẩm mới
+            </button>
+        </div>
+
+        <div class="news-list" id="newsList">
+            <!-- JavaScript tự hiển thị danh sách bài viết -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-view-more" id="btnViewMore">
+                Xem Thêm
+            </button>
+
+            <button class="btn btn-collapse"
+                    id="btnCollapse"
+                    style="display: none;">
+                Thu Gọn
+            </button>
+        </div>
+
+    </section>
+</div>
 
 <section class="social">
   <ul class="social__list">
@@ -315,7 +126,7 @@
   <div class="subscribe__inner">
     <div class="subscribe__info">
       <h2>Theo Dõi Thông Tin Mới Nhất</h2>
-      <p>Theo dõi thông tin chính thức của Genshin Impact, cập nhật những tin tức mới nhất, thông tin nhân vật và phúc lợi sự kiện hạn giờ từ Paimon.</p>
+      <p>Theo dõi thông tin chính thức của kirigaya Store, cập nhật những tin tức mới nhất, thông tin nhân vật và phúc lợi sự kiện hạn giờ từ Paimon.</p>
     </div>
 
     <form class="subscribe__form" onsubmit="return false">
@@ -354,7 +165,9 @@
     <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 17.9A8 8 0 0 1 4.100 11L9 15.900V17c0 1 .9 2 2 2v.9zm6.900-2.500A2 2 0 0 0 16 16h-1v-3c0-.6-.4-1-1-1H8v-2h2c.6 0 1-.4 1-1V7h2c1.100 0 2-.9 2-2v-.4a8 8 0 0 1 2.900 12.800z"/></svg>
   </button>
 </footer>
-
-    <script src="../js/news.js"></script>
+<script src="../js/news-storage.js"></script>
+<script src="../js/news.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/search.js"></script>
 </body>
 </html>

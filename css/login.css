@@ -1,5 +1,5 @@
 
-:root{--cam:#ffd49f;--cam2:#e3c984;--dam:#ee4d2d;--nhat:#ffe0d6;--bong:0 15px 40px rgba(0,0,0,.25)}
+:root{--cam:#cbb892;--cam2:#e3c984;--dam:#5a5346;--nhat:#ffe0d6;--bong:0 15px 40px rgba(0,0,0,.25)}
  
 body{background:linear-gradient(135deg,var(--dam),#ff7a00 60%,#ffa133);min-height:100vh;display:flex;flex-direction:column}
  
@@ -44,8 +44,8 @@ body{background:linear-gradient(135deg,var(--dam),#ff7a00 60%,#ffa133);min-heigh
 .form input{width:100%;padding:13px 40px;border:1px solid #ddd;border-radius:8px;font-size:14px;outline:none;transition:.2s;background:#fafafa}
 .form input:focus{border-color:var(--cam);background:#fff;box-shadow:0 0 0 3px rgba(255,87,34,.15)}
  
-.form button[type=submit]{padding:13px;border:0;border-radius:8px;background:linear-gradient(90deg,var(--cam),var(--cam2));color:#fff;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s}
-.form button[type=submit]:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(255,87,34,.4)}
+.form button[type=submit]{padding:13px;border:0;border-radius:8px;background:var(--cam2);color:#5a5346;font-size:16px;font-weight:bold;cursor:pointer;transition:.2s}
+.form button[type=submit]:hover{transform:translateY(-2px); filter: brightness(1.1);}
  
 .form p{font-size:13px;color:#666;text-align:center}
 .form p a{color:var(--cam);text-decoration:none;font-weight:bold}
@@ -67,7 +67,7 @@ body{background:linear-gradient(135deg,var(--dam),#ff7a00 60%,#ffa133);min-heigh
 .contact{color:#fff;background:none}
 .contact:hover{background:rgba(255,255,255,.25)}
 .help,.back{background:#fff;color:var(--dam);font-weight:bold;border-color:#fff}
-.help:hover,.back:hover{background:var(--nhat);transform:translateY(-2px)}
+.help:hover,.back:hover{background:var(--cam2);transform:translateY(-2px)}
  
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;padding:20px;z-index:100}
 .modal.show{display:flex;animation:fade .3s}

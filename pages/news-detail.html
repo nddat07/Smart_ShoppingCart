@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Shopping Cart chính thức ra mắt - Smart Shopping Cart</title>
+    <link rel="stylesheet" href="../css/news-detail.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+</head>
+<body>
+<header class="header">
+  <div class="header__left">
+    <a class="logo" href="../pages/index.html">KIRIGAYA STORE</a>
+
+    <nav class="nav">
+      <a href="../pages/index.html">Trang Chủ</a>
+      <a class="active" href="../pages/news.html">Tin Tức</a>
+      <a href="../pages/products.html">Sản Phẩm</a>
+      <div class="dropdown">
+        <a href="#">Khác<span class="caret"></span></a>
+        <ul class="submenu">
+          <li><a href="../pages/donate.html">Trung Tâm Liên Hệ</a></li>
+          <li><a href="../pages/login.html">Đăng Nhập</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="header__center">
+  <form class="search" role="search" onsubmit="return false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="10" cy="10" r="6.5"></circle>
+      <line x1="15" y1="15" x2="21" y2="21"></line>
+    </svg>
+    <input id="search-input" autocomplete="off" type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
+  </form>
+
+  <div class="search-suggest" id="search-suggest" hidden></div>
+</div>
+
+  <div class="header__right">
+    <a class="cart" href="../pages/cart.html" aria-label="Giỏ hàng">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.3a1 1 0 0 0 1-.8L21 7H5.6"></path>
+      </svg>
+      <span class="cart-badge" hidden>0</span>
+    </a>
+    <a class="login" href="../pages/login.html">Đăng Nhập <span class="avatar"></span></a>
+  </div>
+</header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+            <span>›</span>
+            Smart Shopping Cart chính thức ra mắt
+        </div>
+        <a href="../pages/news.html" class="quay-lai">← Về Tin Tức</a>
+    </div>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <div class="container">
+    <!-- BÀI VIẾT BÊN TRÁI -->
+    <article class="bai-viet">
+        <h1 class="bai-viet-tieu-de" id="news-title"></h1>
+
+        <div class="bai-viet-meta">
+            Thời Gian Đăng:
+            <span id="news-date"></span>
+        </div>
+
+        <img
+            id="news-image"
+            src=""
+            alt=""
+            class="bai-viet-anh"
+        >
+
+        <p
+            class="bai-viet-chu-thich"
+            id="news-description"
+        ></p>
+
+        <div
+            class="bai-viet-noi-dung"
+            id="news-content"
+        ></div>
+    </article>
+
+    <!-- SIDEBAR BÊN PHẢI -->
+    <aside class="sidebar">
+        <div class="sidebar-tieu-de">Mới</div>
+        <div class="sidebar-list" id="sidebar-list"></div>
+    </aside>
+</div>
+
+    <footer></footer>
+
+<script src="../js/news-storage.js"></script>
+<script src="../js/news-detail.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>

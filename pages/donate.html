@@ -28,17 +28,27 @@
   </div>
 
 
-  <div class="header__center">
-    <form class="search" role="search" onsubmit="return false">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="10" cy="10" r="6.5"></circle>
-        <line x1="15" y1="15" x2="21" y2="21"></line>
-      </svg>
-      <input type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
-    </form>
-  </div>
+<div class="header__center">
+  <form class="search" role="search" onsubmit="return false">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="10" cy="10" r="6.5"></circle>
+      <line x1="15" y1="15" x2="21" y2="21"></line>
+    </svg>
+    <input id="search-input" autocomplete="off" type="search" placeholder="Nhập từ khóa để tìm kiếm (ví dụ: lắp ráp, mô hình, ba lô,...)" aria-label="Tìm kiếm">
+  </form>
 
-  <div class="header__right">
+  <div class="search-suggest" id="search-suggest" hidden></div>
+</div>
+
+   <div class="header__right">
+    <a class="cart" href="../pages/cart.html" aria-label="Giỏ hàng">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="20" r="1.5"></circle>
+        <circle cx="18" cy="20" r="1.5"></circle>
+        <path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.3a1 1 0 0 0 1-.8L21 7H5.6"></path>
+      </svg>
+      <span class="cart-badge" hidden>0</span>
+    </a>
     <a class="login" href="../pages/login.html">Đăng Nhập <span class="avatar"></span></a>
   </div>
   </header>
@@ -105,7 +115,7 @@
   <div class="subscribe__inner">
     <div class="subscribe__info">
       <h2>Theo Dõi Thông Tin Mới Nhất</h2>
-      <p>Theo dõi thông tin chính thức của Genshin Impact, cập nhật những tin tức mới nhất, thông tin nhân vật và phúc lợi sự kiện hạn giờ từ Paimon.</p>
+      <p>Theo dõi thông tin chính thức của kirigaya Store, cập nhật những tin tức mới nhất, thông tin nhân vật và phúc lợi sự kiện hạn giờ từ Paimon.</p>
     </div>
 
     <form class="subscribe__form" onsubmit="return false">
@@ -146,5 +156,7 @@
 </footer>
  
 <script src="../js/donate.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/search.js"></script>
 </body>
 </html>
