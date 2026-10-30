@@ -1,7 +1,17 @@
 const listBox = document.getElementById("product-list");
 
+// Một số slug ở sidebar khác với trường category trong storage.js, đổi qua lại ở đây
+const CATEGORY_ALIASES = {
+  "dien-thoai-phu-kien": "dienthoai-phukien",
+  "laptop-maytinh": "laptop-pc",
+  "giay-dep-nam": "giay-nam",
+  "giay-dep-nu": "giay-nu",
+  "phu-kien-trang-suc": "phukien-trangsuc"
+};
+
 // category = "all" thì hiện tất cả, ngược lại chỉ hiện đúng danh mục
 function renderList(category = "all") {
+  category = CATEGORY_ALIASES[category] || category;
   const items = getProducts().filter(p => category === "all" || p.category === category);
 
   if (items.length === 0) {
@@ -48,7 +58,11 @@ document.addEventListener("click", e => {
   const item = e.target.closest("[data-category]");
   if (!item) return;
   e.preventDefault();               // không cho thẻ <a href="#"> nhảy trang
-  showCategory(item.dataset.category);
+
+  let category = item.dataset.category;
+  // Bấm lần 2 vào đúng mục đang chọn thì bỏ chọn và hiện tất cả
+  if (category !== "all" && item.classList.contains("active")) category = "all";
+  showCategory(category);
 });
 
 bindAddToCart(listBox);

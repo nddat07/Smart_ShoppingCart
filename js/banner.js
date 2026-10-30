@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('next-btn');
   const dots = document.querySelectorAll('.slider-dots .dot');
   const slides = document.querySelectorAll('.slider .slide');
-
   let currentSlide = 0;
   const totalSlides = slides.length || 3;
 

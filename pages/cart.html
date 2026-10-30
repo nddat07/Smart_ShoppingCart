@@ -24,6 +24,8 @@
     .cart-remove:hover { color: #b3261e; }
     .cart-summary { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
     .cart-total { font-size: 1.3rem; font-weight: 700; color: #b3261e; }
+    .cart-checkout { background: #cbb892; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; }
+    .cart-checkout:hover { filter: brightness(1.1); }
     .cart-clear { border: 1px solid #ccc; background: #fff; border-radius: 6px; padding: 8px 14px; cursor: pointer; }
     .cart-empty { text-align: center; padding: 32px 0; }
     @media (max-width: 640px) {
@@ -37,7 +39,7 @@
 </head>
 <body>
   <div class="cart-page">
-    <p><a href="index.html" style="color:inherit">← Tiếp tục mua sắm</a></p>
+    <p><a href="../pages/products.html" style="color:inherit">← Tiếp tục mua sắm</a></p>
     <h2>Giỏ hàng (<span id="cart-count">0</span>)</h2>
 
     <div class="cart-box">
@@ -46,6 +48,7 @@
       <div class="cart-summary" id="cart-summary">
         <button class="cart-clear" id="cart-clear">Xóa tất cả</button>
         <div>Tổng tiền: <span class="cart-total" id="cart-total">0đ</span></div>
+        <a class="cart-checkout" href="../pages/checkout.html">Thanh toán</a>
       </div>
     </div>
   </div>

@@ -1,6 +1,10 @@
 // Tăng số này mỗi khi bạn sửa mảng PRODUCTS để trình duyệt tự nạp lại dữ liệu mới
-const DATA_VERSION = 11;
+const DATA_VERSION = 12;
+
+// Đường dẫn tới trang chi tiết sản phẩm. Đổi cho đúng với TÊN FILE THẬT của bạn.
+// (list.js, search.js, cart.js đều dùng chung hằng này)
 const PRODUCT_PAGE = "../pages/products-informations.html";
+
 const PRODUCTS = [
   {
     id: 1,
@@ -373,3 +377,41 @@ updateCartBadge();
 document.addEventListener("DOMContentLoaded", updateCartBadge);
 // Đồng bộ khi giỏ hàng thay đổi ở tab khác
 window.addEventListener("storage", e => { if (e.key === CART_KEY) updateCartBadge(); });
+
+
+// ===================== ĐƠN HÀNG =====================
+// Đơn hàng lưu trong localStorage (key "orders"). Mỗi đơn lưu "ảnh chụp" tên, giá, số lượng
+// tại thời điểm đặt, nên sau này đổi giá sản phẩm thì đơn cũ không bị đổi theo.
+const ORDERS_KEY = "orders";
+
+function getOrders() {
+  try {
+    return JSON.parse(localStorage.getItem(ORDERS_KEY)) || [];
+  } catch (e) {
+    return [];
+  }
+}
+
+// Tạo đơn từ giỏ hàng hiện tại, lưu lại rồi xóa giỏ hàng. Giỏ trống thì trả về null.
+function createOrder(customer) {
+  const products = getProducts();
+  const items = getCart().map(i => {
+    const p = products.find(x => x.id === i.id);
+    return { id: p.id, name: p.name, price: p.price, image: p.image, qty: i.qty };
+  });
+  if (items.length === 0) return null;
+
+  const order = {
+    id: "DH" + Date.now(),
+    createdAt: new Date().toISOString(),
+    customer: customer,   // { name, phone, address }
+    items: items,
+    total: items.reduce((sum, i) => sum + i.price * i.qty, 0)
+  };
+
+  const orders = getOrders();
+  orders.push(order);
+  localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+  clearCart();
+  return order;
+}

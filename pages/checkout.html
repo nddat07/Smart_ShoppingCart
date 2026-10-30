@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thanh toán</title>
+  <!-- Đổi đường dẫn CSS cho đúng với dự án của bạn -->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    [hidden] { display: none !important; }
+    .checkout-page { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+    .checkout-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+    .co-card { background: #fff; color: #222; border-radius: 12px; padding: 20px; }
+    .co-card h3 { margin: 0 0 16px; }
+
+    .co-field { margin-bottom: 16px; }
+    .co-field label { display: block; font-weight: 600; margin-bottom: 6px; }
+    .co-field input, .co-field textarea { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+    .co-field textarea { min-height: 88px; resize: vertical; }
+    .co-field input:focus, .co-field textarea:focus { outline: 2px solid #1f3a34; border-color: transparent; }
+    .co-field .invalid { border-color: #b3261e; }
+    .co-error { display: block; min-height: 1.2em; margin-top: 4px; color: #b3261e; font-size: 0.85rem; }
+
+    .co-item { display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+    .co-item img { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; }
+    .co-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .co-name { font-weight: 600; font-size: 0.95rem; }
+    .co-qty { color: #666; font-size: 0.85rem; }
+    .co-total { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 1.1rem; }
+    .co-total strong { color: #b3261e; font-size: 1.3rem; }
+    .co-note { color: #666; font-size: 0.85rem; margin: 12px 0; }
+    .co-edit { font-size: 0.9rem; color: inherit; }
+
+    .co-submit { width: 100%; padding: 14px; border: 0; border-radius: 6px; background: #cbb892; color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .co-submit:hover { filter: brightness(1.1); }
+
+    .co-center { text-align: center; padding: 24px 0; }
+    .co-ok { font-size: 2.4rem; color: #2e7d32; }
+    .co-link { display: inline-block; margin-top: 16px; padding: 12px 24px; border-radius: 6px; background: #1f3a34; color: #fff; text-decoration: none; font-weight: 600; }
+    .co-detail { text-align: left; margin: 16px auto; max-width: 480px; line-height: 1.6; }
+
+    @media (max-width: 760px) { .checkout-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="checkout-page">
+    <p><a href="../pages/cart.html" style="color:inherit">← Quay lại giỏ hàng</a></p>
+    <h2>Thanh toán</h2>
+
+    <!-- Trang nhập thông tin + xác nhận sản phẩm -->
+    <div class="checkout-grid" id="checkout-content">
+      <form class="co-card" id="checkout-form" novalidate>
+        <h3>Thông tin giao hàng</h3>
+
+        <div class="co-field">
+          <label for="co-name">Họ và tên</label>
+          <input id="co-name" type="text" autocomplete="name" placeholder="Nguyễn Văn A">
+          <span class="co-error" id="err-name"></span>
+        </div>
+
+        <div class="co-field">
+          <label for="co-phone">Số điện thoại</label>
+          <input id="co-phone" type="tel" autocomplete="tel" placeholder="0912345678">
+          <span class="co-error" id="err-phone"></span>
+        </div>
+
+        <div class="co-field">
+          <label for="co-address">Địa chỉ giao hàng</label>
+          <textarea id="co-address" autocomplete="street-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố"></textarea>
+          <span class="co-error" id="err-address"></span>
+        </div>
+      </form>
+
+      <aside class="co-card">
+        <h3>Xác nhận đơn hàng</h3>
+        <div id="co-items"></div>
+        <div class="co-total"><span>Tổng thanh toán</span><strong id="co-total">0đ</strong></div>
+        <p class="co-note">Phương thức: thanh toán khi nhận hàng. Phí vận chuyển (nếu có) tính khi giao.</p>
+        <button type="submit" form="checkout-form" class="co-submit">Đặt hàng</button>
+        <p style="text-align:center"><a class="co-edit" href="../pages/cart.html">Chỉnh sửa giỏ hàng</a></p>
+      </aside>
+    </div>
+
+    <!-- Giỏ hàng trống -->
+    <div class="co-card co-center" id="checkout-empty" hidden>
+      <p>Giỏ hàng của bạn đang trống, chưa có gì để thanh toán.</p>
+      <a class="co-link" href="index.html">Tiếp tục mua sắm</a>
+    </div>
+
+    <!-- Đặt hàng thành công -->
+    <div class="co-card co-center" id="checkout-success" hidden></div>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>
