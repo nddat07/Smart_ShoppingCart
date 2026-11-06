@@ -550,3 +550,153 @@
   }
   .lang:hover { color: #fff; border-color: #555; }
   .lang svg { width: 22px; height: 22px; fill: currentColor; }
+
+  @media (max-width: 768px) {
+
+  /* ===== Header ===== */
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 16px;
+    row-gap: 10px;
+  }
+
+  .header__left {
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo { margin-right: 12px; font-size: 20px; }
+  .icon-btn { margin-right: 8px; }
+
+  /* Menu xuống hàng riêng, cuộn ngang được */
+  .nav {
+    order: 3;
+    width: 100%;
+    height: 40px;
+    flex-wrap: wrap;
+  }
+  .nav > a,
+  .nav .dropdown > a { padding: 0 10px; font-size: 12px; }
+
+  .header__right { gap: 12px; }
+
+  /* Ô tìm kiếm xuống hàng riêng, full width */
+  .header__center {
+    order: 4;
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+  .search { max-width: 100%; height: 34px; }
+  .search input { font-size: 13px; }
+
+  /* ===== Social ===== */
+  .social__list { gap: 12px 32px; padding: 10px 16px; }
+
+  /* ===== Subscribe ===== */
+  .subscribe__inner {
+    flex-direction: column;
+    gap: 24px;
+    padding: 28px 16px 36px;
+  }
+  .subscribe__info h2 { font-size: 19px; }
+  .subscribe__info p { max-width: 100%; }
+  .subscribe__form { width: 100%; }
+  .subscribe__row { flex-direction: column; gap: 12px; }
+  .subscribe__row button { width: 100%; }
+
+  /* ===== Footer ===== */
+  .footer { padding: 28px 16px 24px; }
+  .footer__links {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 22px;
+  }
+  .badges { flex-wrap: wrap; gap: 14px; }
+
+  /* Nút ngôn ngữ: đưa xuống dưới, không đè lên logo */
+  .lang {
+    position: static;
+    margin: 16px auto 0;
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Dropdown trên màn cảm ứng: hiện khi focus */
+  .submenu { min-width: 130px; }
+}
+
+@media (max-width: 480px) {
+
+  /* ===== Header ===== */
+  .header {
+    padding: 8px 12px;
+    row-gap: 8px;
+  }
+
+  .logo { font-size: 18px; margin-right: 8px; }
+  .icon-btn { width: 20px; height: 20px; margin-right: 6px; }
+
+  /* Menu: xuống dòng gọn, căn giữa */
+  .nav {
+    height: auto;
+    justify-content: center;
+    row-gap: 2px;
+  }
+  .nav > a,
+  .nav .dropdown > a {
+    height: 36px;
+    padding: 0 8px;
+    font-size: 11.5px;
+  }
+
+  /* Submenu: bám theo mép trái màn hình, không tràn ra ngoài */
+  .submenu {
+    min-width: 120px;
+    max-width: calc(100vw - 24px);
+  }
+  .submenu a { padding: 12px 14px; font-size: 12px; }
+
+  /* Header phải: đăng nhập + giỏ hàng gọn lại */
+  .header__right { gap: 10px; }
+  .login { font-size: 11px; gap: 6px; }
+  .cart svg { width: 22px; height: 22px; }
+  .cart-badge { min-width: 22px; right: -8px; }
+
+  /* Tìm kiếm: chữ >= 16px để iOS không tự zoom khi bấm vào */
+  .search { height: 36px; }
+  .search input { font-size: 16px; }
+  .search-suggest { max-height: 60vh; }
+  .suggest-item { padding: 8px 10px; gap: 10px; }
+  .suggest-item img { width: 40px; height: 40px; }
+  .suggest-name { font-size: 13px; }
+
+  /* ===== Social ===== */
+  .social__list { gap: 14px 22px; padding: 10px 12px; }
+  .social__list a { width: 24px; height: 24px; }
+
+  /* ===== Subscribe ===== */
+  .subscribe__inner { padding: 24px 12px 30px; gap: 20px; }
+  .subscribe__info h2 { font-size: 17px; margin-bottom: 10px; }
+  .subscribe__info p { font-size: 12px; line-height: 18px; }
+  .subscribe__row input[type="email"] {
+    height: 44px;
+    font-size: 16px;            /* tránh iOS zoom */
+  }
+  .subscribe__row button { height: 44px; }
+  .consent { font-size: 11px; }
+  .consent input { width: 14px; height: 14px; margin-top: 2px; }
+
+  /* ===== Footer ===== */
+  .footer { padding: 24px 12px 20px; }
+  .footer__logo b { font-size: 22px; }
+  .footer__links { gap: 6px 14px; font-size: 11px; }
+  .badges { margin: 16px 0; }
+  .funtap svg { width: 34px; height: 34px; }
+  .funtap__text b { font-size: 20px; }
+  .funtap__text span { font-size: 13px; }
+  .footer__info p { font-size: 10.5px; line-height: 15px; margin-bottom: 14px; }
+}

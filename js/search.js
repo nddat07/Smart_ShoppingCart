@@ -1,5 +1,3 @@
-// Gợi ý sản phẩm khi gõ vào thanh tìm kiếm trên header.
-// Cần nạp SAU storage.js (để dùng getProducts và formatPrice).
 (function () {
   // PRODUCT_PAGE (đường dẫn trang chi tiết) được khai báo trong storage.js
   const MAX_RESULTS = 6;
@@ -49,8 +47,6 @@
     return normalize(str).split(/[\s()\/&–—-]+/).filter(Boolean);
   }
 
-  // Mỗi từ người dùng gõ phải là phần đầu của một từ nào đó trong văn bản
-  // ("ao" khớp "Áo" nhưng không khớp "Chảo")
   function matches(words, textTokens) {
     return words.every(w => textTokens.some(t => t.startsWith(w)));
   }
